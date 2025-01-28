@@ -23,4 +23,4 @@ const createPersonalInfoSlice: StateCreator<PersonalInfoSlice> = (set) => ({
 });
 
 export default createPersonalInfoSlice;
-export type { PersonalInfo, PersonalInfoSlice };
+export type { PersonalInfoSlice };
