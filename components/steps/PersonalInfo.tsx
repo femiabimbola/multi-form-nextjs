@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import useStore from "@/store/useStore";
+import SectionHeader from "../SectionHeader";
 
 const formSchema = z.object({
   name: z.string().min(5, { message: "Name is required" }).max(100),
@@ -31,8 +32,14 @@ export const PersonalInfo = () => {
     defaultValues: { ...personalInfo },
   });
 
+  const SectionProps = {
+    title: "Personal info",
+    description: "Please provide your name, email address, and phone number.",
+  };
+
   return (
     <section>
+      <SectionHeader {...SectionProps} />
       The Personal info
       <button onClick={() => increaseStep(1)}> next step </button>
     </section>
