@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import useStore from "@/store/useStore";
 import SectionHeader from "../SectionHeader";
+import Container from "../Container";
 
 const formSchema = z.object({
   name: z.string().min(5, { message: "Name is required" }).max(100),
@@ -38,10 +39,12 @@ export const PersonalInfo = () => {
   };
 
   return (
-    <section>
-      <SectionHeader {...SectionProps} />
-      The Personal info
-      <button onClick={() => increaseStep(1)}> next step </button>
-    </section>
+    <Container>
+      <section>
+        <SectionHeader {...SectionProps} />
+        The Personal info
+        <button onClick={() => increaseStep(1)}> next step </button>
+      </section>
+    </Container>
   );
 };
