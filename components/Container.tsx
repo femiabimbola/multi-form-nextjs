@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 
 const sectionStyles =
@@ -14,7 +15,10 @@ const Container = ({ children }: TContainer) => {
   return (
     <section className={sectionStyles}>
       <Sidebar />
-      <div className="w-full mr-[80px] relative">{children}</div>
+      <div className="w-full mr-[80px] relative">
+        {children}
+        <Footer />
+      </div>
     </section>
   );
 };
