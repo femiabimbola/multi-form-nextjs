@@ -57,14 +57,13 @@ export const PersonalInfo = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormDescription>This is your public display name.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </form>
         </Form>
-        <button onClick={() => increaseStep(1)}> next step </button>
+        {/* <button onClick={() => increaseStep(1)}> next step </button> */}
       </section>
     </Container>
   );

@@ -11,13 +11,16 @@ type TContainer = {
   onPreviousStep?: () => void;
 };
 
-const Container = ({ children }: TContainer) => {
+const Container = ({ children, onNext, onPreviousStep }: TContainer) => {
   return (
     <section className={sectionStyles}>
       <Sidebar />
       <div className="w-full mr-[80px] relative">
         {children}
-        <Footer />
+        <Footer
+          onHandleNextStep={onNext}
+          onHandlePreviousStep={onPreviousStep}
+        />
       </div>
     </section>
   );

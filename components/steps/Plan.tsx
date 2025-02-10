@@ -1,6 +1,7 @@
 import useStore from "@/store/useStore";
 import Container from "../Container";
 import SectionHeader from "../SectionHeader";
+import { plans } from "@/data";
 
 const SectionProps = {
   title: "Plan",
@@ -16,6 +17,7 @@ export const Plan = () => {
   };
 
   const onPrevious = () => {
+    decreaseStep(-1);
     decreaseStep(step);
   };
 
@@ -25,6 +27,9 @@ export const Plan = () => {
       onPreviousStep={onPrevious}
     >
       <SectionHeader {...SectionProps} />
+      {plans.map((plan) => (
+        <p key={plan.id}> {plan.name}</p>
+      ))}
     </Container>
   );
 };
