@@ -1,5 +1,6 @@
 import useStore from "@/store/useStore";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 interface FooterProps {
   className?: string;
@@ -11,7 +12,7 @@ const Footer = ({ className, onHandleNextStep, onHandlePreviousStep }: FooterPro
   const step = useStore((state) => state.step);
   return (
     <footer>
-      {step === 1 && <div className="w-full" />}{" "}
+      {step === 1 && <div className="w-full" />}
       {step > 1 && (
         <Button
           variant="ghost"
@@ -21,6 +22,14 @@ const Footer = ({ className, onHandleNextStep, onHandlePreviousStep }: FooterPro
           Go Back
         </Button>
       )}
+      <Button
+        className={cn("bg-c-primary-marine-blue text-c-neutral-white hover:bg-c-primary-marine-blue-hover", {
+          "bg-c-primary-purplish-blue hover:bg-c-primary-purplish-hover": step === 4,
+        })}
+        onClick={onHandleNextStep}
+      >
+        {step === 4 ? "Confirm" : "Next Step"}
+      </Button>
     </footer>
   );
 };
