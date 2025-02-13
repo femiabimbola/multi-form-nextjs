@@ -2,6 +2,7 @@ import useStore from "@/store/useStore";
 import Container from "../Container";
 import SectionHeader from "../SectionHeader";
 import { plans } from "@/data";
+import PlanCard from "../PlanCard";
 
 const SectionProps = {
   title: "Plan",
@@ -28,7 +29,10 @@ export const Plan = () => {
     >
       <SectionHeader {...SectionProps} />
       {plans.map((plan) => (
-        <p key={plan.id}> {plan.name}</p>
+        <PlanCard
+          key={plan.id}
+          item={plan}
+        />
       ))}
     </Container>
   );
