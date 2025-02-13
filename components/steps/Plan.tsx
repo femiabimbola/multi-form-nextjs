@@ -28,12 +28,14 @@ export const Plan = () => {
       onPreviousStep={onPrevious}
     >
       <SectionHeader {...SectionProps} />
-      {plans.map((plan) => (
-        <PlanCard
-          key={plan.id}
-          item={plan}
-        />
-      ))}
+      <section className="flex flex-col gap-3 lg:flex-row lg:gap-4 w-full">
+        {plans.map((plan) => (
+          <PlanCard
+            key={plan.id}
+            item={plan}
+          />
+        ))}
+      </section>
     </Container>
   );
 };
