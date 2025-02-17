@@ -3,6 +3,7 @@ import Container from "../Container";
 import SectionHeader from "../SectionHeader";
 import { plans } from "@/data";
 import PlanCard from "../PlanCard";
+import { Filter } from "../Filter";
 
 const SectionProps = {
   title: "Plan",
@@ -33,9 +34,11 @@ export const Plan = () => {
           <PlanCard
             key={plan.id}
             item={plan}
+            onClick={() => {}}
           />
         ))}
       </section>
+      <Filter />
     </Container>
   );
 };

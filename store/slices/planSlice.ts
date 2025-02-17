@@ -25,4 +25,4 @@ const createPlanSlice: StateCreator<PlanSlice> = (set) => ({
 });
 
 export default createPlanSlice;
-export type { Plan, PlanSlice };
+export type { PlanSlice };

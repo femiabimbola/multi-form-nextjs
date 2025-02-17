@@ -28,8 +28,11 @@ const PlanCard = ({ item, onClick }: any) => {
   const trails = item.subscription.yearly?.trails;
 
   return (
-    <Card className={cn("cursor-pointer")}>
-      <CardContent>
+    <Card
+      className={cn("cursor-pointer w-full")}
+      onClick={onClick}
+    >
+      <CardContent className="w-full lg:pt-5 flex items-center h-full gap-[14px] p-4 lg:flex-col lg:items-start">
         <div className="relative w-10 h-10 lg:mb-[39px]">
           <Image
             src={imgSrc}
@@ -38,7 +41,7 @@ const PlanCard = ({ item, onClick }: any) => {
           />
         </div>
         <div className="flex flex-col gap-[7px]">
-          <CardTitle className="text-base font-medium text-c-primary-marine-blue">{item?.name}</CardTitle>
+          <CardTitle className="text-base font-medium ">{item?.name}</CardTitle>
           {/* <p className="text-sm text-c-neutral-cool-gray">{isToggled ? yearlyPrice : monthlyPrice}</p> */}
           <p className="text-sm text-c-neutral-cool-gray">{yearlyPrice}</p>
           <p className="text-xs text-c-primary-marine-blue">{trails}</p>

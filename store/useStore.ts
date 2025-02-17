@@ -1,15 +1,14 @@
 import { create } from "zustand";
-import { PersonalInfoSlice } from "./slices/personalInfo";
-import createPersonalInfoSlice from "./slices/personalInfo";
-import createPlanSlice from "./slices/planSlice";
-import { PlanSlice } from "./slices/planSlice";
-import createStepSlice from "./slices/createStepSlice";
-import { StepSlice } from "./slices/createStepSlice";
+import createPersonalInfoSlice, { PersonalInfoSlice } from "./slices/personalInfo";
+import createPlanSlice, { PlanSlice } from "./slices/planSlice";
+import createStepSlice, { StepSlice } from "./slices/createStepSlice";
+import createToggleSubscriptionPlan, { ToggleSubcriptionPlanSlice } from "./slices/toggleSubscriptionPlan";
 
-const useStore = create<PersonalInfoSlice & PlanSlice & StepSlice>((...a) => ({
+const useStore = create<PersonalInfoSlice & PlanSlice & StepSlice & ToggleSubcriptionPlanSlice>((...a) => ({
   ...createPersonalInfoSlice(...a),
   ...createPlanSlice(...a),
   ...createStepSlice(...a),
+  ...createToggleSubscriptionPlan(...a),
 }));
 
 export default useStore;
