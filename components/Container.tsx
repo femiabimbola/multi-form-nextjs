@@ -1,9 +1,6 @@
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 
-const sectionStyles =
-  "w-80  px-6 py-8 lg:px-[100px] lg:pt-10 bg-c-neutral-white lg:flex lg:w-[940px] rounded-[15px] c-shadow absolute top-[103px] lg:static lg:mx-auto left-1/2 -translate-x-1/2 lg:left-0 lg:-translate-x-0 lg:mt-[103px] lg:p-4 min-h-[376px] lg:min-h-[600px] lg:gap-[100px]";
-
 type TContainer = {
   children: React.ReactNode;
   className?: string;
@@ -13,9 +10,9 @@ type TContainer = {
 
 const Container = ({ children, onNext, onPreviousStep }: TContainer) => {
   return (
-    <section className={sectionStyles}>
+    <section className="border border-red-300 w-100 px-2 py-8 lg:px-[100px] lg:pt-10  lg:flex lg:w-[940px] rounded-[15px] c-shadow absolute top-[103px] lg:static lg:mx-auto left-1/2 -translate-x-1/2 lg:left-0 lg:-translate-x-0 lg:mt-[103px] lg:p-4 min-h-[376px] lg:min-h-[600px] lg:gap-[100px]">
       <Sidebar />
-      <div className="w-full mr-[80px] relative">
+      <div className="w-full mr-[10px] relative">
         {children}
         <Footer
           onHandleNextStep={onNext}
