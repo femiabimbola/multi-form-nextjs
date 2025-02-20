@@ -1,7 +1,8 @@
 "use client";
 
+import { Addons } from "@/components/steps/Addons";
 import { PersonalInfo } from "@/components/steps/PersonalInfo";
-import { Plan } from "@/components/steps/Plan";
+import { PlanStep } from "@/components/steps/Plan";
 import useStore from "@/store/useStore";
 
 const Home = () => {
@@ -10,7 +11,8 @@ const Home = () => {
   return (
     <main>
       {step === 1 && <PersonalInfo />}
-      {step === 2 && <Plan />}
+      {step === 2 && <PlanStep />}
+      {step === 3 && <Addons />}
     </main>
   );
 };

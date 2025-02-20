@@ -26,10 +26,8 @@ export const PersonalInfo = () => {
   const { personalInfo, setPersonalInfo, increaseStep } = useStore((state) => state);
 
   const onSubmitHandler = (values: ValidationSchema) => {
-    console.log(personalInfo);
     setPersonalInfo({ ...personalInfo, ...values });
     increaseStep(1);
-    console.log(personalInfo);
   };
 
   const form = useForm<ValidationSchema>({

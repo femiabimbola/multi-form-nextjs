@@ -4,7 +4,7 @@ import Image from "next/image";
 import useStore from "@/store/useStore";
 
 const PlanCard = ({ item, onClick }: any) => {
-  // const { isToggled, plan } = useStore((state) => state);
+  const { isToggled, plan } = useStore((state) => state);
   let imgSrc = "";
   let alt = "";
 
@@ -40,11 +40,10 @@ const PlanCard = ({ item, onClick }: any) => {
             fill
           />
         </div>
-        <div className="flex flex-col gap-[7px]">
+        <div className="flex flex-col gap-[5px]">
           <CardTitle className="text-base font-medium ">{item?.name}</CardTitle>
-          {/* <p className="text-sm text-c-neutral-cool-gray">{isToggled ? yearlyPrice : monthlyPrice}</p> */}
-          <p className="text-sm text-c-neutral-cool-gray">{yearlyPrice}</p>
-          <p className="text-xs text-c-primary-marine-blue">{trails}</p>
+          <p className="text-sm text-grey">{isToggled ? yearlyPrice : monthlyPrice}</p>
+          {isToggled && <p className="text-xs text-c-primary-marine-blue">{trails}</p>}
         </div>
       </CardContent>
     </Card>

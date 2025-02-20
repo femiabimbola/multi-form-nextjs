@@ -4,23 +4,37 @@ import SectionHeader from "../SectionHeader";
 import { plans } from "@/data";
 import PlanCard from "../PlanCard";
 import { Filter } from "../Filter";
+import { Plan } from "@/store/slices/planSlice";
 
 const SectionProps = {
   title: "Plan",
   description: "Enter the Plan ",
 };
 
-export const Plan = () => {
-  const { step, increaseStep, decreaseStep } = useStore((state) => state);
+export const PlanStep = () => {
+  const { step, plan, isToggled, setPlan, increaseStep, decreaseStep } = useStore((state) => state);
 
   const onNext = () => {
     // if (!selectedPlan?.id || !plan.name) return;
+    if (!plan.name) return;
     increaseStep(step);
   };
 
   const onPrevious = () => {
-    decreaseStep(-1);
+    // decreaseStep(-1);
     decreaseStep(step);
+  };
+
+  console.log(plan);
+  const handleOnClick = (plan: any) => {
+    setPlan({
+      ...plan,
+      id: plan.id,
+      name: plan.name,
+      price: isToggled ? plan.subscription.yearly.price : plan.subscription.monthly.price,
+      type: isToggled ? plan.subscription.yearly.type : plan.subscription.monthly.type,
+    });
+    console.log(plan);
   };
 
   return (
@@ -34,7 +48,7 @@ export const Plan = () => {
           <PlanCard
             key={plan.id}
             item={plan}
-            onClick={() => {}}
+            onClick={() => handleOnClick(plan)}
           />
         ))}
       </section>
