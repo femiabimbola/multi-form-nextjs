@@ -45,3 +45,51 @@ export const plans = [
     },
   },
 ];
+
+export const addOns = [
+  {
+    id: 1,
+    name: "Online service",
+    description: "Access to multiplayer games",
+    subscription: {
+      monthly: {
+        price: 1,
+        type: "month",
+      },
+      yearly: {
+        price: 10,
+        type: "yearly",
+      },
+    },
+  },
+  {
+    id: 2,
+    name: "Larger storage",
+    description: "Extra 1TB of cloud save",
+    subscription: {
+      monthly: {
+        price: 2,
+        type: "month",
+      },
+      yearly: {
+        price: 20,
+        type: "yearly",
+      },
+    },
+  },
+  {
+    id: 3,
+    name: "Customizable profile",
+    description: "Custom theme to your profile",
+    subscription: {
+      monthly: {
+        price: 2,
+        type: "month",
+      },
+      yearly: {
+        price: 20,
+        type: "yearly",
+      },
+    },
+  },
+];

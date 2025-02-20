@@ -13,6 +13,11 @@ const Sidebar = () => {
         smallTitle="Step 2"
         sectionTitle="Select Plan"
       />
+      <Pointer
+        stepNumber={3}
+        smallTitle="Step 3"
+        sectionTitle="Chose your addon"
+      />
     </aside>
   );
 };

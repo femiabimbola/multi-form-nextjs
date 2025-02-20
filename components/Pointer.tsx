@@ -14,17 +14,17 @@ const Pointer = ({ stepNumber = 1, smallTitle = "", sectionTitle = "" }: Pointer
     <section className="uppercase flex items-center gap-4">
       <p
         className={cn(
-          "w-[33px] h-[33px] rounded-full flex items-center justify-center text-sm font-bold text-c-neutral-white border border-c-neutral-white",
+          "w-[33px] h-[33px] rounded-full flex items-center justify-center text-sm font-bold text-white bg-blue-800 ",
           {
-            "bg-c-primary-light-blue text-c-primary-marine-blue border-c-primary-light-blue": stepNumber === step,
+            "bg-blue-500 text-white ": stepNumber === step,
           }
         )}
       >
         {stepNumber}
       </p>
       <div className="flex flex-col">
-        <p className="text-xs text-c-primary-pastel-blue">{smallTitle}</p>
-        <p className="text-sm text-c-neutral-white font-bold">{sectionTitle}</p>
+        <p className="text-xs text-blue-950">{smallTitle}</p>
+        <p className="text-sm text-white font-bold">{sectionTitle}</p>
       </div>
     </section>
   );
