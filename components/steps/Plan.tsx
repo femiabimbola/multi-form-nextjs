@@ -4,7 +4,6 @@ import SectionHeader from "../SectionHeader";
 import { plans } from "@/data";
 import PlanCard from "../PlanCard";
 import { Filter } from "../Filter";
-import { Plan } from "@/store/slices/planSlice";
 
 const SectionProps = {
   title: "Plan",

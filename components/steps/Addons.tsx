@@ -2,6 +2,7 @@ import { addOns } from "@/data";
 import Container from "../Container";
 import SectionHeader from "../SectionHeader";
 import { AddonCard } from "../AddonCard";
+import useStore from "@/store/useStore";
 
 const SectionProps = {
   title: "Pick an Addon",
@@ -9,14 +10,18 @@ const SectionProps = {
 };
 
 export const Addons = () => {
+  const { decreaseStep, step } = useStore((state) => state);
+  const onPrevious = () => {
+    decreaseStep(step);
+  };
   return (
-    <Container>
+    <Container onPreviousStep={onPrevious}>
       <SectionHeader {...SectionProps} />
-      <section>
+      <div>
         {addOns.map((addOn) => (
           <AddonCard key={addOn.id} />
         ))}
-      </section>
+      </div>
     </Container>
   );
 };
