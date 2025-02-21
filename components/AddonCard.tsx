@@ -29,7 +29,7 @@ const normalizeAddOn = (addOn: AddOn, isToggled: boolean) => {
   };
 };
 
-export const AddonCard = (addOn: AddOn) => {
+export const AddonCard = (addOn: any) => {
   const { isToggled, toggleAddOn, unToggledAddOn, selectedAddOns } = useStore((state) => state);
 
   const isChecked = selectedAddOns.some((item) => item.id === addOn.id);
@@ -42,8 +42,12 @@ export const AddonCard = (addOn: AddOn) => {
     }
   };
 
+  const formattedPrice = isToggled
+    ? `+$${addOn?.subscription.yearly.price}/yr`
+    : `+$${addOn?.subscription.monthly.price}/mo`;
+
   return (
-    <label htmlFor={addOn.id}>
+    <label>
       <Card className={cn("cursor-pointer hover:", { isChecked: "border border-purple-600 bg-slate-300" })}>
         <CardContent className="flex items-center py-[13px] px-4 w-full justify-between lg:py-4 lg:px-6">
           <div>
@@ -54,8 +58,10 @@ export const AddonCard = (addOn: AddOn) => {
             />
             <div>
               <CardTitle className="text-sm lg:text-base font-medium text-blue-500">{addOn.name}</CardTitle>
+              <p className="text-xs lg:text-[15px] text-c-neutral-cool-gray">{addOn.description}</p>
             </div>
           </div>
+          <div className="text-xs text-c-primary-purplish-blue lg:text-[15px]">{formattedPrice}</div>
         </CardContent>
       </Card>
     </label>

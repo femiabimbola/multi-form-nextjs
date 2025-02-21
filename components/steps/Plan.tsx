@@ -20,7 +20,6 @@ export const PlanStep = () => {
   };
 
   const onPrevious = () => {
-    // decreaseStep(-1);
     decreaseStep(step);
   };
 

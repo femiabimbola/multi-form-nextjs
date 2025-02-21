@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 export const Filter = () => {
   const { isToggled, toggleSubscriptionPlan } = useStore((state) => state);
+
   const initialState = {
     id: 0,
     name: "",
