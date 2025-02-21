@@ -24,3 +24,4 @@ const createAddOnSlice: StateCreator<AddOnSlice> = (set) => ({
 });
 
 export default createAddOnSlice;
+export type { AddOnSlice };

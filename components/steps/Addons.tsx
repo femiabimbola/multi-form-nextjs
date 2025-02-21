@@ -18,8 +18,11 @@ export const Addons = () => {
     <Container onPreviousStep={onPrevious}>
       <SectionHeader {...SectionProps} />
       <div>
-        {addOns.map((addOn) => (
-          <AddonCard key={addOn.id} />
+        {addOns.map((addon) => (
+          <AddonCard
+            key={addon.id}
+            addOn={addon}
+          />
         ))}
       </div>
     </Container>
